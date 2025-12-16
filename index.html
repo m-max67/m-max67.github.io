@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M-Max Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <aside class="sidebar">
+    <h2>M-Max</h2>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('games')">Games</button>
+    <button onclick="showPage('apps')">Apps</button>
+    <button onclick="showPage('about')">About</button>
+  </aside>
+
+  <main class="content">
+    <section id="home" class="page active">
+      <h1>Welcome</h1>
+      <p>This is your GitHub Pages platform.</p>
+    </section>
+
+    <section id="games" class="page">
+      <h1>Games</h1>
+      <div class="card">Game 1 (coming soon)</div>
+      <div class="card">Game 2 (coming soon)</div>
+    </section>
+
+    <section id="apps" class="page">
+      <h1>Apps</h1>
+      <div class="card">App 1</div>
+      <div class="card">App 2</div>
+    </section>
+
+    <section id="about" class="page">
+      <h1>About</h1>
+      <p>Made by m-max67 using GitHub Pages.</p>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
