@@ -2,9 +2,9 @@ function showPage(pageId) {
   document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
   });
+  document.getElementById(pageId).classList.add('active');
+}
 
-  const page = document.getElementById(pageId);
-  if (page) {
-    page.classList.add('active');
-  }
+function play(name) {
+  alert(name + " game coming next!");
 }
