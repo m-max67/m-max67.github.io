@@ -15,6 +15,7 @@ function openGame(url, external = false) {
   document.getElementById('modal').style.display = 'block';
 }
 
+
 function closeGame() {
   document.getElementById('frame').src = '';
   document.getElementById('modal').style.display = 'none';
