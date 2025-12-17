@@ -1,14 +1,24 @@
-function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(page => {
-    page.classList.remove('active');
-  });
-
-  const page = document.getElementById(pageId);
-  if (page) {
-    page.classList.add('active');
-  }
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p =>
+    p.classList.remove('active')
+  );
+  document.getElementById(id).classList.add('active');
 }
 
-function play(name) {
-  alert(name + " game will be playable soon!");
+function openGame(url) {
+  document.getElementById('frame').src = url;
+  document.getElementById('modal').style.display = 'block';
+}
+
+function closeGame() {
+  document.getElementById('frame').src = '';
+  document.getElementById('modal').style.display = 'none';
+}
+
+function filterGames() {
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display =
+      card.dataset.name.includes(q) ? 'block' : 'none';
+  });
 }
