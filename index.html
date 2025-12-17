@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>M-Max Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -21,75 +21,77 @@
     <!-- HOME -->
     <section id="home" class="page active">
       <h1>Welcome</h1>
-      <p>Your browser-based game hub.</p>
-      <p>Play games instantly or open them in new tabs.</p>
+      <p>Your all-in-one browser game hub.</p>
     </section>
 
     <!-- GAMES -->
     <section id="games" class="page">
       <h1>Games</h1>
 
-      <input
-        id="search"
-        placeholder="Search games..."
-        oninput="filterGames()"
-      >
+      <div class="controls">
+        <input id="search" placeholder="Search games..." oninput="filterGames()" />
+        <div class="tabs">
+          <button onclick="setCategory('all')">All</button>
+          <button onclick="setCategory('arcade')">Arcade</button>
+          <button onclick="setCategory('puzzle')">Puzzle</button>
+          <button onclick="setCategory('strategy')">Strategy</button>
+          <button onclick="setCategory('idle')">Idle</button>
+        </div>
+      </div>
 
       <div id="gameGrid">
 
-     <!-- IFRAME SAFE -->
-<div class="card" data-name="snake">
-  <h3>Snake</h3>
-  <button onclick="openGame('https://playsnake.org/')">Play</button>
-</div>
+        <!-- IFRAME-SAFE -->
+        <div class="card" data-name="snake" data-cat="arcade">
+          <h3>Snake</h3>
+          <button onclick="openGame('https://playsnake.org/')">Play</button>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<div class="card" data-name="pong">
-  <h3>Pong</h3>
-  <button onclick="openGame('https://www.ponggame.org/')">Play</button>
-</div>
+        <div class="card" data-name="pong" data-cat="arcade">
+          <h3>Pong</h3>
+          <button onclick="openGame('https://www.ponggame.org/')">Play</button>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<div class="card" data-name="2048">
-  <h3>2048</h3>
-  <button onclick="openGame('https://play2048.co/')">Play</button>
-</div>
+        <div class="card" data-name="2048" data-cat="puzzle">
+          <h3>2048</h3>
+          <button onclick="openGame('https://play2048.co/')">Play</button>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<!-- EXTERNAL ONLY -->
-<div class="card" data-name="minesweeper">
-  <h3>Minesweeper</h3>
-  <button onclick="openGame('https://minesweeperonline.com/', true)">Play</button>
-</div>
+        <!-- EXTERNAL -->
+        <div class="card external" data-name="chess" data-cat="strategy">
+          <h3>Chess</h3>
+          <button onclick="openGame('https://www.chess.com/play/computer', true)">Play</button>
+          <span class="badge">External</span>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<div class="card" data-name="chess">
-  <h3>Chess</h3>
-  <button onclick="openGame('https://www.chess.com/play/computer', true)">Play</button>
-</div>
+        <div class="card external" data-name="minesweeper" data-cat="puzzle">
+          <h3>Minesweeper</h3>
+          <button onclick="openGame('https://minesweeperonline.com/', true)">Play</button>
+          <span class="badge">External</span>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<div class="card" data-name="tetris">
-  <h3>Tetris</h3>
-  <button onclick="openGame('https://tetris.com/play-tetris', true)">Play</button>
-</div>
+        <div class="card external" data-name="idle clicker" data-cat="idle">
+          <h3>Idle Clicker</h3>
+          <button onclick="openGame('https://orteil.dashnet.org/cookieclicker/', true)">Play</button>
+          <span class="badge">External</span>
+          <span class="fav" onclick="toggleFav(this)">⭐</span>
+        </div>
 
-<div class="card" data-name="space invaders">
-  <h3>Space Invaders</h3>
-  <button onclick="openGame('https://funhtml5games.com?play=spaceinvaders', true)">Play</button>
-</div>
-
-<div class="card" data-name="breakout">
-  <h3>Breakout</h3>
-  <button onclick="openGame('https://funhtml5games.com?play=breakout', true)">Play</button>
-</div>
-
+      </div>
     </section>
 
     <!-- APPS -->
     <section id="apps" class="page">
       <h1>Apps</h1>
-
-      <div class="card">
+      <div class="card external">
         <h3>Calculator</h3>
-        <button onclick="openGame('https://www.desmos.com/scientific', true)">
-          Open
-        </button>
+        <button onclick="openGame('https://www.desmos.com/scientific', true)">Open</button>
+        <span class="badge">External</span>
       </div>
     </section>
 
@@ -97,20 +99,22 @@
     <section id="about" class="page">
       <h1>About</h1>
       <p>
-        M-Max Hub is a personal browser game platform built by
-        <strong>m-max67</strong>.
+        M-Max Hub is a browser-based game platform by <strong>m-max67</strong>.
       </p>
       <p>
-        Built using HTML, CSS, and JavaScript. Hosted on GitHub Pages.
+        Built with HTML, CSS, and JavaScript. Hosted on GitHub Pages.
       </p>
     </section>
 
   </main>
 </div>
 
-<!-- GAME MODAL -->
+<!-- MODAL -->
 <div id="modal">
-  <button onclick="closeGame()">✖</button>
+  <div class="modal-top">
+    <button onclick="toggleFullscreen()">⛶</button>
+    <button onclick="closeGame()">✖</button>
+  </div>
   <iframe id="frame"></iframe>
 </div>
 
