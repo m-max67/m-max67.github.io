@@ -5,7 +5,12 @@ function showPage(id) {
   document.getElementById(id).classList.add('active');
 }
 
-function openGame(url) {
+function openGame(url, external = false) {
+  if (external) {
+    window.open(url, "_blank");
+    return;
+  }
+
   document.getElementById('frame').src = url;
   document.getElementById('modal').style.display = 'block';
 }
