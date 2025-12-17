@@ -18,11 +18,14 @@
 
   <main class="content">
 
+    <!-- HOME -->
     <section id="home" class="page active">
       <h1>Welcome</h1>
-      <p>Your browser-based game platform.</p>
+      <p>Your browser-based game hub.</p>
+      <p>Play games instantly or open them in new tabs.</p>
     </section>
 
+    <!-- GAMES -->
     <section id="games" class="page">
       <h1>Games</h1>
 
@@ -34,6 +37,7 @@
 
       <div id="gameGrid">
 
+        <!-- IFRAME-SAFE GAMES -->
         <div class="card" data-name="snake">
           <h3>Snake</h3>
           <button onclick="openGame('https://playsnake.org/')">Play</button>
@@ -49,19 +53,20 @@
           <button onclick="openGame('https://play2048.co/')">Play</button>
         </div>
 
+        <!-- EXTERNAL (BLOCKED) GAMES -->
         <div class="card" data-name="minesweeper">
           <h3>Minesweeper</h3>
-          <button onclick="openGame('https://minesweeperonline.com/')">Play</button>
+          <button onclick="openGame('https://minesweeperonline.com/', true)">Play</button>
         </div>
 
         <div class="card" data-name="chess">
           <h3>Chess</h3>
-          <button onclick="openGame('https://www.chess.com/play/computer')">Play</button>
+          <button onclick="openGame('https://www.chess.com/play/computer', true)">Play</button>
         </div>
 
         <div class="card" data-name="tetris">
-          <h3>Tetris Style</h3>
-          <button onclick="openGame('https://tetris.com/play-tetris')">Play</button>
+          <h3>Tetris</h3>
+          <button onclick="openGame('https://tetris.com/play-tetris', true)">Play</button>
         </div>
 
         <div class="card" data-name="space invaders">
@@ -77,20 +82,27 @@
       </div>
     </section>
 
+    <!-- APPS -->
     <section id="apps" class="page">
       <h1>Apps</h1>
+
       <div class="card">
         <h3>Calculator</h3>
-        <button onclick="openGame('https://www.desmos.com/scientific')">
+        <button onclick="openGame('https://www.desmos.com/scientific', true)">
           Open
         </button>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="page">
       <h1>About</h1>
       <p>
-        M-Max Hub is a personal game platform by <strong>m-max67</strong>.
+        M-Max Hub is a personal browser game platform built by
+        <strong>m-max67</strong>.
+      </p>
+      <p>
+        Built using HTML, CSS, and JavaScript. Hosted on GitHub Pages.
       </p>
     </section>
 
