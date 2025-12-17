@@ -48,3 +48,8 @@ function saveRecent(url) {
   if (!r.includes(url)) r.unshift(url);
   localStorage.setItem('recent', JSON.stringify(r.slice(0, 5)));
 }
+{
+  name: "Mini Football",
+  url: "your-games/football.html",
+  img: "https://i.imgur.com/7W1R9ZB.png"
+}
