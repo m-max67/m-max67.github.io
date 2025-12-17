@@ -15,10 +15,12 @@ body {
 }
 
 .sidebar {
-  width: 220px;
-  background: #020617;
+  width: 230px;
+  background: linear-gradient(180deg, #020617, #020617);
   padding: 20px;
+  border-right: 1px solid #1e293b;
 }
+
 
 .sidebar h2 {
   margin-bottom: 20px;
@@ -26,13 +28,20 @@ body {
 
 .sidebar button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
-  background: #1e293b;
-  border: none;
+  background: #020617;
+  border: 1px solid #1e293b;
   color: white;
   cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s ease;
 }
+
+.sidebar button:hover {
+  background: #1e293b;
+}
+
 
 .sidebar button:hover {
   background: #334155;
@@ -53,8 +62,16 @@ body {
 }
 
 .card {
-  background: #1e293b;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 8px;
+  background: #020617;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+}
+h1 {
+  margin-top: 0;
+}
+
+button {
+  font-size: 14px;
 }
