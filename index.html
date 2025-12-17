@@ -20,55 +20,87 @@
 
     <section id="home" class="page active">
       <h1>Welcome</h1>
-      <p>Your personal browser game hub.</p>
-      <ul>
-        <li>🎮 Lots of games</li>
-        <li>⚡ Fast & simple</li>
-        <li>🚀 Powered by GitHub Pages</li>
-      </ul>
+      <p>Your browser-based game platform.</p>
     </section>
 
     <section id="games" class="page">
       <h1>Games</h1>
 
-      <div class="card"><h3>Snake</h3><button onclick="play('Snake')">Play</button></div>
-      <div class="card"><h3>Pong</h3><button onclick="play('Pong')">Play</button></div>
-      <div class="card"><h3>2048</h3><button onclick="play('2048')">Play</button></div>
-      <div class="card"><h3>Breakout</h3><button onclick="play('Breakout')">Play</button></div>
-      <div class="card"><h3>Space Invaders</h3><button onclick="play('Space Invaders')">Play</button></div>
-      <div class="card"><h3>Tetris Style</h3><button onclick="play('Tetris')">Play</button></div>
-      <div class="card"><h3>Chess</h3><button onclick="play('Chess')">Play</button></div>
-      <div class="card"><h3>Checkers</h3><button onclick="play('Checkers')">Play</button></div>
-      <div class="card"><h3>Minesweeper</h3><button onclick="play('Minesweeper')">Play</button></div>
-      <div class="card"><h3>Pac-Man Style</h3><button onclick="play('Pac-Man')">Play</button></div>
-      <div class="card"><h3>Runner</h3><button onclick="play('Runner')">Play</button></div>
-      <div class="card"><h3>Clicker</h3><button onclick="play('Clicker')">Play</button></div>
-      <div class="card"><h3>Idle Game</h3><button onclick="play('Idle')">Play</button></div>
-      <div class="card"><h3>Platformer</h3><button onclick="play('Platformer')">Play</button></div>
-      <div class="card"><h3>Racing</h3><button onclick="play('Racing')">Play</button></div>
+      <input
+        id="search"
+        placeholder="Search games..."
+        oninput="filterGames()"
+      >
 
+      <div id="gameGrid">
+
+        <div class="card" data-name="snake">
+          <h3>Snake</h3>
+          <button onclick="openGame('https://playsnake.org/')">Play</button>
+        </div>
+
+        <div class="card" data-name="pong">
+          <h3>Pong</h3>
+          <button onclick="openGame('https://www.ponggame.org/')">Play</button>
+        </div>
+
+        <div class="card" data-name="2048">
+          <h3>2048</h3>
+          <button onclick="openGame('https://play2048.co/')">Play</button>
+        </div>
+
+        <div class="card" data-name="minesweeper">
+          <h3>Minesweeper</h3>
+          <button onclick="openGame('https://minesweeperonline.com/')">Play</button>
+        </div>
+
+        <div class="card" data-name="chess">
+          <h3>Chess</h3>
+          <button onclick="openGame('https://www.chess.com/play/computer')">Play</button>
+        </div>
+
+        <div class="card" data-name="tetris">
+          <h3>Tetris Style</h3>
+          <button onclick="openGame('https://tetris.com/play-tetris')">Play</button>
+        </div>
+
+        <div class="card" data-name="space invaders">
+          <h3>Space Invaders</h3>
+          <button onclick="openGame('https://funhtml5games.com?play=spaceinvaders')">Play</button>
+        </div>
+
+        <div class="card" data-name="breakout">
+          <h3>Breakout</h3>
+          <button onclick="openGame('https://funhtml5games.com?play=breakout')">Play</button>
+        </div>
+
+      </div>
     </section>
 
     <section id="apps" class="page">
       <h1>Apps</h1>
       <div class="card">
         <h3>Calculator</h3>
-        <button onclick="alert('Calculator coming soon')">Open</button>
+        <button onclick="openGame('https://www.desmos.com/scientific')">
+          Open
+        </button>
       </div>
     </section>
 
     <section id="about" class="page">
       <h1>About</h1>
       <p>
-        M-Max Hub is a personal project by <strong>m-max67</strong>.
-        Built with HTML, CSS, and JavaScript.
-      </p>
-      <p>
-        This hub is expandable and will keep growing with more games.
+        M-Max Hub is a personal game platform by <strong>m-max67</strong>.
       </p>
     </section>
 
   </main>
+</div>
+
+<!-- GAME MODAL -->
+<div id="modal">
+  <button onclick="closeGame()">✖</button>
+  <iframe id="frame"></iframe>
 </div>
 
 <script src="script.js"></script>
