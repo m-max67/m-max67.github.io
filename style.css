@@ -16,11 +16,10 @@ body {
 
 .sidebar {
   width: 230px;
-  background: linear-gradient(180deg, #020617, #020617);
+  background: #020617;
   padding: 20px;
   border-right: 1px solid #1e293b;
 }
-
 
 .sidebar h2 {
   margin-bottom: 20px;
@@ -35,16 +34,10 @@ body {
   color: white;
   cursor: pointer;
   border-radius: 6px;
-  transition: background 0.15s ease;
 }
 
 .sidebar button:hover {
   background: #1e293b;
-}
-
-
-.sidebar button:hover {
-  background: #334155;
 }
 
 .content {
@@ -68,10 +61,7 @@ body {
   border-radius: 10px;
   border: 1px solid #1e293b;
 }
+
 h1 {
   margin-top: 0;
-}
-
-button {
-  font-size: 14px;
 }
